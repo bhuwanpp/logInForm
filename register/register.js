@@ -3,6 +3,39 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const submit = document.getElementById('submit');
+
+//  submit.addEventListener('click',() =>{
+
+
+    
+    
+//     // Save the data in local storage
+//     localStorage.setItem('username', username.value);
+//     localStorage.setItem('email', email.value);
+//     localStorage.setItem('password', password.value);
+    
+//     // Retrieve the data from local storage
+//     const savedUsername = localStorage.getItem('username');
+//     const savedEmail = localStorage.getItem('email');
+//     const savedPassword = localStorage.getItem('password');
+    
+    
+    
+//     // Display the retrieved data
+//     console.log('Username:', savedUsername);
+//     console.log('Email:', savedEmail);
+//     console.log('Password:', savedPassword);
+
+    
+//     username.value = '';
+//     email.value = '';
+//     password.value = '';
+//     password2.value = '';
+  
+  
+// })
+
 
 // Show input error message
 function showError(input, message) {
@@ -35,12 +68,14 @@ function checkRequired(inputArr) {
     if (input.value.trim() === '') {
       showError(input, `${getFieldName(input)} is required`);
       isRequired = true;
+      
     } else {
       showSuccess(input);
+      
     }
   });
 
-  return isRequired;
+  return !isRequired;
 }
 
 // Check input length
@@ -81,6 +116,33 @@ form.addEventListener('submit', function(e) {
     checkLength(password, 6, 25);
     checkEmail(email);
     checkPasswordsMatch(password, password2);
+
+    
+    
+    // Save the data in local storage
+    localStorage.setItem('username', username.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('password', password.value);
+
+    alert('You registered successfully');
+    
+    // Retrieve the data from local storage
+    const savedUsername = localStorage.getItem('username');
+    const savedEmail = localStorage.getItem('email');
+    const savedPassword = localStorage.getItem('password');
+    
+    
+    
+    // Display the retrieved data
+    console.log('Username:', savedUsername);
+    console.log('Email:', savedEmail);
+    console.log('Password:', savedPassword);
+
+    username.value = '';
+    email.value = '';
+    password.value = '';
+    password2.value = '';
+
   }
 
 });
