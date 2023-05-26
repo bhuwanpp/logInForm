@@ -4,37 +4,8 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const submit = document.getElementById('submit');
-
-//  submit.addEventListener('click',() =>{
-
-
-    
-    
-//     // Save the data in local storage
-//     localStorage.setItem('username', username.value);
-//     localStorage.setItem('email', email.value);
-//     localStorage.setItem('password', password.value);
-    
-//     // Retrieve the data from local storage
-//     const savedUsername = localStorage.getItem('username');
-//     const savedEmail = localStorage.getItem('email');
-//     const savedPassword = localStorage.getItem('password');
-    
-    
-    
-//     // Display the retrieved data
-//     console.log('Username:', savedUsername);
-//     console.log('Email:', savedEmail);
-//     console.log('Password:', savedPassword);
-
-    
-//     username.value = '';
-//     email.value = '';
-//     password.value = '';
-//     password2.value = '';
-  
-  
-// })
+const back = document.getElementById('back');
+const register  = document.getElementById('register');
 
 
 // Show input error message
@@ -124,7 +95,16 @@ form.addEventListener('submit', function(e) {
     localStorage.setItem('email', email.value);
     localStorage.setItem('password', password.value);
 
-    alert('You registered successfully');
+
+    
+    form.innerText = '';
+    back.style.display = 'block';
+    register.style.display = 'block'
+
+    back.addEventListener('click',() =>{
+      window.location.href = "/main/index.html";
+    })
+  
     
     // Retrieve the data from local storage
     const savedUsername = localStorage.getItem('username');
@@ -138,6 +118,8 @@ form.addEventListener('submit', function(e) {
     console.log('Email:', savedEmail);
     console.log('Password:', savedPassword);
 
+
+
     username.value = '';
     email.value = '';
     password.value = '';
@@ -146,3 +128,4 @@ form.addEventListener('submit', function(e) {
   }
 
 });
+
