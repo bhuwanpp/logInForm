@@ -18,9 +18,11 @@ btn.addEventListener('click',(e) =>{
     if(email.value=== '' || password.value === ''){
         alert('please fill all ')
         e.preventDefault();
-    }else if(email.value === 'bhubanpaudel79@gmail.com' && password.value === '12345'){
+    }else if(email.value === 'bhbanpaudel79@gmail.com' && password.value === '12345'){
     
-      window.location.href = "/register/register.html";
+
+      window.location.href = "/log/log.html";
+
     }else{
         alert('you entered the wrong email or password')
     }
